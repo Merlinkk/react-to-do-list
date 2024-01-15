@@ -1,0 +1,58 @@
+.head{
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.taskInput{
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
+
+.taskElement{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.inputLabel, .inputButton{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+}
+
+input[type=text]{
+    font-size: 20px;
+    color:green;
+}
+
+.optionButtons button{
+    padding: 5px;
+    margin: 5px;
+}
+
+.taskOutputContainer{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.taskElement{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+}
