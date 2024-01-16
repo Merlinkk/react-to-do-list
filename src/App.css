@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    background: rgb(57,161,255);
+background: radial-gradient(circle, rgba(57,161,255,1) 50%, rgba(2,45,83,1) 100%, rgba(2,0,36,1) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.imgRobo{
+    border-radius: 50%;
+    margin:20px;
+}
+.container{
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0;
+}
+
+.TaskForm input,.TaskForm button{
+    padding: 10px;
+    font-size: 40px;  
+    border-radius: 1em;
+    margin: 10px;
+}
+.TaskForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.TaskForm input{
+    outline: 0;
+    border: 2px solid blue;
+    background: none;
+    width: 90%;
+}
+
+.taskListContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px;
+}
+
+.taskElement{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.224);
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+}
+
+.taskText{
+    font-size: 30px;
+    padding: 10px;
+}
+
+.buttons button{
+    padding: 10px;
+    font-size: 15px;
+    border-radius:3em ;
+    cursor: pointer;
+}
+
+.mainContainer{
+    width: 50%;
+}
