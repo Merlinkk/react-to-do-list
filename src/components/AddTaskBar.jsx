@@ -9,7 +9,7 @@ export class AddTaskBar extends Component {
     return (
       <>
         <form className='TaskForm' onSubmit={handleSubmit}>
-            <input type="text" id='newTask' placeholder='Add a new task' onChange={handleInput} />
+            <input type="text" id='newTask' placeholder='new task....' onChange={handleInput} />
             <button className='add' type='submit'>Add</button>
         </form>
       </>

@@ -40,6 +40,12 @@ body{
     width: 90%;
 }
 
+.TaskForm input::placeholder{
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
 .taskListContainer{
     display: flex;
     flex-direction: column;
@@ -65,6 +71,9 @@ body{
 .taskText{
     font-size: 30px;
     padding: 10px;
+    background: none;
+    border: none;
+    color: red;
 }
 
 .buttons button{
@@ -95,4 +104,8 @@ body{
 .delete:hover{
     background-color: rgba(255, 19, 19, 0.808);
     color: white;
+}
+
+::placeholder{
+    color: rgb(0, 255, 0)
 }

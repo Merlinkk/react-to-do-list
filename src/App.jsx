@@ -40,28 +40,34 @@ class App extends Component {
   }
 
   handleDelete = (key) => {
-    const taskList = [...this.state.todo];
-    const index = taskList.findIndex(item => item.key === key);
+    let taskList = [...this.state.todo];
+    // const index = taskList.findIndex(item => item.key === key);
   
-    if (index !== -1) {
-      taskList.splice(index, 1);
+    // if (index !== -1) {
+    //   taskList.splice(index, 1);
   
-      this.setState({
-        todo: taskList,
+    //   this.setState({
+    //     todo: taskList,
+    //   });
+    // }
+
+    taskList = taskList.filter((el)=>{
+      return el.key != key
+    })
+    this.setState({
+          todo: taskList,
       });
-    }
+
   };
 
   handleUpdate = (index) => {
-    let newTask = prompt('ENTER NEW TASK');
-    if(newTask !== null && newTask.trim()!=""){
+      const newTask = this.state.todoItem
       const taskList = [...this.state.todo]
-      taskList[index].key = Date.now()
-      taskList[index].description = newTask
+      taskList[index].key = newTask.key
+      taskList[index].description = newTask.description
       this.setState({
         todo: taskList
       })
-    }
   }
 
 
@@ -74,7 +80,7 @@ class App extends Component {
 
         <div className="mainContainer">        
         <AddTaskBar handleInput={this.handleInput} handleSubmit={this.handleSubmit}/>
-        <TaskList taskList = {this.state.todo} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} />
+        <TaskList handleInput={this.handleInput} taskList = {this.state.todo} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} />
         </div>
       </div>
     );
