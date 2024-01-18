@@ -74,6 +74,7 @@ body{
     background: none;
     border: none;
     color: red;
+    width: 100%;
 }
 
 .buttons button{
