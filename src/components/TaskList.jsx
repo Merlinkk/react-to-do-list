@@ -14,8 +14,8 @@ export default class TaskList extends Component {
                     {task}
                 </div>
                 <div className='buttons'>
-                    <button onClick={()=>{handleEditTask(index)}}>Edit</button>
-                    <button onClick={()=>{handleDeleteTask(index)}}>Delete</button>
+                    <button className='edit' onClick={()=>{handleEditTask(index)}}>Edit</button>
+                    <button className='delete' onClick={()=>{handleDeleteTask(index)}}>Delete</button>
                 </div>
             </div>
         })}

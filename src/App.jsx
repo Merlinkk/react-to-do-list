@@ -38,7 +38,7 @@ class App extends Component {
 
   handleEditTask = (index) => {
     let newTask = prompt('ENTER NEW TASK');
-    if(newTask !== null){
+    if(newTask !== null && newTask.trim()!=""){
       const taskList = [...this.state.taskList]
       taskList[index] = newTask
       this.setState({
