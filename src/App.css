@@ -6,7 +6,7 @@ body{
     height: 100vh;
     background: rgb(57,161,255);
     background: radial-gradient(circle, rgba(57,161,255,1) 40%, rgba(2,45,83,1) 100%, rgba(2,0,36,1) 100%);
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
 }
 
 .imgRobo{

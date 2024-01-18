@@ -3,12 +3,12 @@ import React, { Component } from 'react'
 export class AddTaskBar extends Component {
   render() {
 
-    const {handleInput, handleAddTask} = this.props
+    const {handleInput, handleSubmit} = this.props
 
 
     return (
       <>
-        <form className='TaskForm' onSubmit={handleAddTask}>
+        <form className='TaskForm' onSubmit={handleSubmit}>
             <input type="text" id='newTask' placeholder='Add a new task' onChange={handleInput} />
             <button className='add' type='submit'>Add</button>
         </form>

@@ -8,51 +8,60 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      taskList:[],
-      newTask:""
+      todo:[],
+      todoItem:{
+        key:"",
+        description:""
+      }
     }
   }
 
   handleInput = (e) => {
     this.setState({
-      [e.target.id]:e.target.value
+      todoItem:{
+        key: Date.now(),
+        description: e.target.value
+      }
     })
   }
 
-  handleAddTask = (e) => {
-
-    e.preventDefault()
-
-    const {newTask} = this.state
-
-    if(newTask.trim()!=""){
-      this.setState((prevState) => ({
-        taskList:[...prevState.taskList,this.state.newTask],
-        newTask:""
-      }))
-    }
-    // setTimeout(() => {
-    //   console.log(this.state)
-    // }, 5);
+  handleSubmit = (e) =>{
+    e.preventDefault()   
+    const newTask = this.state.todoItem
+    if(this.state.todoItem.description !=""){
+      const newTodo = [...this.state.todo, newTask]
+      this.setState({
+        todo: newTodo,
+        todoItem:{
+          key:"",
+          description:""
+        }})
+      } 
   }
 
-  handleEditTask = (index) => {
+  handleDelete = (key) => {
+    const taskList = [...this.state.todo];
+    const index = taskList.findIndex(item => item.key === key);
+  
+    if (index !== -1) {
+      taskList.splice(index, 1);
+  
+      this.setState({
+        todo: taskList,
+      });
+    }
+  };
+
+  handleUpdate = (index) => {
     let newTask = prompt('ENTER NEW TASK');
     if(newTask !== null && newTask.trim()!=""){
-      const taskList = [...this.state.taskList]
-      taskList[index] = newTask
+      const taskList = [...this.state.todo]
+      taskList[index].key = Date.now()
+      taskList[index].description = newTask
       this.setState({
-        taskList: taskList
+        todo: taskList
       })
     }
-  }
-
-  handleDeleteTask = (index) => {
-    const taskList = [...this.state.taskList]
-    taskList.splice(index,1)
-    this.setState({
-      taskList
-    })
   }
 
 
@@ -64,8 +73,8 @@ class App extends Component {
         <img src = "https://i.pinimg.com/564x/31/5e/a9/315ea97166fe5cc6407294dbe3cbe681.jpg" className="imgRobo" height={400} />
 
         <div className="mainContainer">        
-        <AddTaskBar handleInput={this.handleInput} handleAddTask={this.handleAddTask}/>
-        <TaskList taskList = {this.state.taskList } handleEditTask={this.handleEditTask} handleDeleteTask={this.handleDeleteTask}/>
+        <AddTaskBar handleInput={this.handleInput} handleSubmit={this.handleSubmit}/>
+        <TaskList taskList = {this.state.todo} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} />
         </div>
       </div>
     );
